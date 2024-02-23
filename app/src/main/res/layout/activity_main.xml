@@ -1,18 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white"
+    >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="15dp"
+        android:padding="15dp"
+        >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/imageView_logo"
+            android:layout_width="212dp"
+            android:layout_height="115dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="-8dp"
+            app:srcCompat="@drawable/tamucc_Logo"
+            android:layout_centerHorizontal="true"
+            android:maxWidth="180dp"
+            android:maxHeight="180dp"
+            ></ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/logInPageTextView"
+            android:layout_marginTop="30dp"
+            android:text="Welcome to SnapRoll"
+            android:textAlignment="center"
+            android:layout_below="@id/imageView_logo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            >
+        </TextView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/logInButton"
+            android:text="Login"
+            android:layout_marginTop="100dp"
+            android:layout_below="@id/logInPageTextView"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            ></Button>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/signUpButton"
+            android:text="SignUp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/logInButton"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            ></Button>
+
+    </RelativeLayout>
+
+
+</ScrollView>
