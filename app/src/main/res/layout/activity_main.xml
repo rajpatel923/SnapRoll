@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/white"
+    android:background="@color/gray"
     >
 
     <RelativeLayout
@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:padding="15dp"
+        android:background="@color/white"
         >
 
         <ImageView
@@ -21,7 +22,7 @@
             android:layout_height="115dp"
             android:layout_marginStart="7dp"
             android:layout_marginTop="-8dp"
-            app:srcCompat="@drawable/tamucc_Logo"
+            app:srcCompat="@drawable/tamucc_logo"
             android:layout_centerHorizontal="true"
             android:maxWidth="180dp"
             android:maxHeight="180dp"
