@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navRecent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/recent"
+        android:iconTint="@color/Green"
+        android:title="Recent" />
+    <item
+        android:id="@+id/navAttendance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/attendance"
+        android:iconTint="@color/Green"
+        android:title="Attendance" />
+    <item
+        android:id="@+id/navNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/notes"
+        android:iconTint="@color/Green"
+        android:title="Notes" />
+    <item
+        android:id="@+id/navProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/profile"
+        android:iconTint="@color/Green"
+        android:title="Profile" />
+</menu>
