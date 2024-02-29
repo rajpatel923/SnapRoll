@@ -2,13 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navRecent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:icon="@drawable/recent"
-        android:iconTint="@color/Green"
-        android:title="Recent" />
-    <item
         android:id="@+id/navAttendance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
