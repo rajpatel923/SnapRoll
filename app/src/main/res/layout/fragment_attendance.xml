@@ -1,18 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/NavyBlue"
-    tools:context=".AttendanceFragment">
+    android:background="@color/NavyBlue">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Attendance Fragment"
+    <!-- Create Class Button -->
+    <Button
+        android:id="@+id/btnCreateClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create A Class"
         android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp" />
 
-</FrameLayout>
+    <!-- Chemistry Class Box -->
+
+    <!-- Object Oriented Programming Class Box -->
+    <RelativeLayout
+        android:id="@+id/layoutChemistry"
+        android:layout_width="395dp"
+        android:layout_height="136dp"
+        android:layout_below="@id/btnCreateClass"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_class_box">
+
+        <!-- Chemistry Class Name -->
+        <TextView
+            android:id="@+id/tvChemistryClassName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Chemistry"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <!-- Take Attendance Button with Face Recognition Icon -->
+
+        <!-- Check Attendance Button with Check Attendance Icon -->
+
+        <Button
+            android:id="@+id/btnChemistryCheckAttendance"
+            android:layout_width="154dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/tvChemistryClassName"
+            android:layout_alignStart="@id/tvChemistryClassName"
+            android:layout_marginStart="73dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/rounded_button"
+            android:drawableTop="@drawable/checkattendanceicon"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnChemistryTakeAttendance"
+            android:layout_width="154dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/tvChemistryClassName"
+            android:layout_alignEnd="@id/tvChemistryClassName"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="73dp"
+            android:background="@drawable/rounded_button"
+            android:drawableTop="@drawable/facerecognitionicon"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutOOP"
+        android:layout_width="395dp"
+        android:layout_height="136dp"
+        android:layout_below="@id/layoutChemistry"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_class_box">
+
+        <!-- OOP Class Name -->
+        <TextView
+            android:id="@+id/tvOOPClassName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Object Oriented Programming"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <!-- Take Attendance Button with Face Recognition Icon -->
+
+        <!-- Check Attendance Button with Check Attendance Icon -->
+
+        <Button
+            android:id="@+id/btnOOPCheckAttendance"
+            android:layout_width="154dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/tvOOPClassName"
+            android:layout_alignStart="@id/tvOOPClassName"
+            android:layout_marginStart="174dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/rounded_button"
+            android:drawableTop="@drawable/checkattendanceicon"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnOOPTakeAttendance"
+            android:layout_width="154dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/tvOOPClassName"
+            android:layout_alignEnd="@id/tvOOPClassName"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="174dp"
+            android:background="@drawable/rounded_button"
+            android:drawableTop="@drawable/facerecognitionicon"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <!-- Computer Architecture Class Box -->
+    <RelativeLayout
+        android:id="@+id/layoutComputerArchitecture"
+        android:layout_width="395dp"
+        android:layout_height="136dp"
+        android:layout_below="@id/layoutOOP"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_class_box">
+
+        <!-- Computer Architecture Class Name -->
+        <TextView
+            android:id="@+id/tvCompArchClassName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Computer Architecture"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <!-- Take Attendance Button with Face Recognition Icon -->
+
+        <!-- Check Attendance Button with Check Attendance Icon -->
+
+        <Button
+            android:id="@+id/btnCompArchCheckAttendance"
+            android:layout_width="154dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/tvCompArchClassName"
+            android:layout_alignStart="@id/tvCompArchClassName"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/rounded_button"
+            android:drawableTop="@drawable/checkattendanceicon"            android:drawablePadding="8dp"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnCompArchTakeAttendance"
+            android:layout_width="154dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/tvCompArchClassName"
+            android:layout_alignEnd="@id/tvCompArchClassName"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="136dp"
+            android:background="@drawable/rounded_button"
+            android:drawableTop="@drawable/facerecognitionicon"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <!-- History Class Box -->
+    <RelativeLayout
+        android:id="@+id/layoutHistory"
+        android:layout_width="395dp"
+        android:layout_height="136dp"
+        android:layout_below="@id/layoutOOP"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="171dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_class_box">
+
+        <!-- Computer Architecture Class Name -->
+        <TextView
+            android:id="@+id/tvHistoryClassName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="U.S. History"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <!-- Take Attendance Button with Face Recognition Icon -->
+
+        <!-- Check Attendance Button with Check Attendance Icon -->
+
+        <Button
+            android:id="@+id/btnHistoryCheckAttendance"
+            android:layout_width="154dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/tvHistoryClassName"
+            android:layout_alignStart="@id/tvHistoryClassName"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/rounded_button"
+            android:drawableTop="@drawable/checkattendanceicon"            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnHistoryTakeAttendance"
+            android:layout_width="154dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/tvHistoryClassName"
+            android:layout_alignEnd="@id/tvHistoryClassName"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="80dp"
+            android:background="@drawable/rounded_button"
+            android:drawableTop="@drawable/facerecognitionicon"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
