@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "756350465503",
+    "project_id": "snaproll-4bc2e",
+    "storage_bucket": "snaproll-4bc2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756350465503:android:a4c86dc361ea33eaf1806a",
+        "android_client_info": {
+          "package_name": "com.example.snaproll"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOoEUGrLww_7HhOuTGSAq7sVp-PcgsBIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
