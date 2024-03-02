@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         logInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, DashboardTeacherAndStudent.class);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
