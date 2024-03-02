@@ -27,10 +27,7 @@ public class DashboardTeacherAndStudent extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if (item.getItemId() == R.id.navRecent) {
-                    loadFragment(new RecentFragment());
-                    return true;
-                } else if (item.getItemId() == R.id.navAttendance) {
+                if (item.getItemId() == R.id.navAttendance) {
                     loadFragment(new AttendanceFragment());
                     return true;
                 } else if (item.getItemId() == R.id.navNotes) {
@@ -43,7 +40,7 @@ public class DashboardTeacherAndStudent extends AppCompatActivity {
                 return false;
             }
         });
-        loadFragment(new RecentFragment());
+        loadFragment(new AttendanceFragment());
     }
     private void loadFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();

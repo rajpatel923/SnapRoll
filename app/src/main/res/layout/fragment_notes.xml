@@ -6,13 +6,43 @@
     android:background="@color/NavyBlue"
     tools:context=".NotesFragment">
 
+    <!--Formatting of the background box on the notes fragment -->
+    <TextView
+        android:layout_width="355dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:background="@drawable/rounded_class_box" />
+
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="60dp"
         android:gravity="center"
         android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:text="Notes Fragment" />
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:text="Class Name" />
+    <!-- need to come back and replace Class Name with whatever
+    variable we use to hold the user defined class name-->
 
+    <Button
+        android:id="@+id/takeNotesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="60dp"
+        android:text="Take Notes"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/checkNotesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="225dp"
+        android:layout_marginTop="60dp"
+        android:text="Check Notes"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 </FrameLayout>
