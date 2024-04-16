@@ -2,8 +2,10 @@ package com.example.snaproll;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.OpenableColumns;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +20,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+
+
+
+
 
 
 public class NotesFragment extends Fragment {
@@ -97,13 +103,47 @@ public class NotesFragment extends Fragment {
             destinationDirectory.mkdirs();
         }
 
+        ////
         // Extract the file name from the URI
+        String fileName;
+        if ("content".equals(mp3Uri.getScheme()))
+        {
+            // If the URI is of type content://, resolve the actual file name using a ContentResolver
+            Cursor cursor = null;
+            try {
+                cursor = getActivity().getContentResolver().query(mp3Uri, null, null, null, null);
+                Log.d("NotesFragment", "Entering first try.");
+
+                if (cursor != null && cursor.moveToFirst()) {
+                    fileName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+                } else {
+                    // Failed to retrieve file name
+                    fileName = "audio.mp3"; // Default file name
+                }
+            } finally {
+                if (cursor != null) {
+                    cursor.close();
+                }
+            }
+        } else {
+            // For other URI schemes like file://, just get the last path segment
+            fileName = mp3Uri.getLastPathSegment();
+        }
+
+        // Create a destination file within the destination directory
+        File destinationFile = new File(destinationDirectory, fileName);
+
+        ///
+
+       /* // Extract the file name from the URI
         String fileName = mp3Uri.getLastPathSegment();
         //String fileName = mp3Uri.substring(mp3Uri.lastIndexOf('/') + 1);
 
         // Create a destination file within the destination directory
         File destinationFile = new File(destinationDirectory, fileName);
 
+        /*
+        */
         try {
             // Open the input and output streams
 
@@ -131,6 +171,7 @@ public class NotesFragment extends Fragment {
         } catch (IOException e) {
             e.printStackTrace();
             Log.d("NotesFragment", "MP# file copied to app directory UN - successfully: ");
+            Log.e("NotesFragment", "Error copying MP3 file to app directory: " + e.getMessage());
 
             // Handle any errors that occur during the file copy process
         }
