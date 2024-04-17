@@ -1,7 +1,5 @@
 package com.example.snaproll;
 
-<<<<<<< Updated upstream
-=======
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -9,8 +7,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
->>>>>>> Stashed changes
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,19 +16,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-<<<<<<< Updated upstream
-=======
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
->>>>>>> Stashed changes
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-<<<<<<< Updated upstream
-=======
 import com.example.snaproll.APIController.ApiUploadInterface;
 import com.example.snaproll.APIController.RetrofitClient;
 
@@ -50,17 +43,18 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 public class NotesFragment extends Fragment {
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_notes, container, false);
-<<<<<<< Updated upstream
-    }
-}
-=======
-    }*/
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+//        return inflater.inflate(R.layout.fragment_notes, container, false);
+////<<<<<<< Updated upstream
+//    }
+//}
+//=======
+    //}
+//    */
 
     private static final int REQUEST_PICK_MP3_FILE = 1;
     private ActivityResultLauncher<String> mGetContent;
@@ -311,5 +305,3 @@ public class NotesFragment extends Fragment {
 
 }
 
-
->>>>>>> Stashed changes
