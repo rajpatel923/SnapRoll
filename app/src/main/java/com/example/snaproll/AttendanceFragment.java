@@ -1,6 +1,7 @@
 package com.example.snaproll;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.SurfaceTexture;
@@ -17,20 +18,22 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CalendarView;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.app.AlertDialog;
-import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +42,7 @@ public class AttendanceFragment extends Fragment {
     private LinearLayout classContainer;
 
     private static final String TAG = "AttendanceFragment";
-    private int classCounter = 1;
+
     private TextureView textureView;
     private CameraDevice cameraDevice;
     private CameraCaptureSession captureSession;
@@ -69,6 +72,7 @@ public class AttendanceFragment extends Fragment {
         classBoxLayoutParams.setMargins(dpToPx(16), dpToPx(14), dpToPx(16), dpToPx(14));
         classBoxLayout.setLayoutParams(classBoxLayoutParams);
         classBoxLayout.setBackground(requireContext().getDrawable(R.drawable.rounded_class_box));
+
         TextView classNameTextView = new TextView(requireContext());
         classNameTextView.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         classNameTextView.setId(View.generateViewId());
@@ -76,13 +80,20 @@ public class AttendanceFragment extends Fragment {
         classNameTextView.setTextColor(getResources().getColor(R.color.black));
         classNameTextView.setTextSize(24);
         classBoxLayout.addView(classNameTextView);
+
         Button checkAttendanceButton = createButton("Check Attendance", R.drawable.checkattendanceicon);
+        checkAttendanceButton.setOnClickListener(v -> {
+            Log.d(TAG, "Check Attendance Button pressed");
+            Log.d(TAG, "Check Attendance button clicked for: " + className);
+            showCalendarDialog();
+        });
         RelativeLayout.LayoutParams checkParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         checkParams.addRule(RelativeLayout.BELOW, classNameTextView.getId());
         checkParams.addRule(RelativeLayout.ALIGN_PARENT_START);
         checkParams.setMargins(dpToPx(10), dpToPx(8), 0, 0);
         checkAttendanceButton.setLayoutParams(checkParams);
         classBoxLayout.addView(checkAttendanceButton);
+
         Button takeAttendanceButton = createButton("Take Attendance", R.drawable.facerecognitionicon);
         takeAttendanceButton.setOnClickListener(v -> toggleCameraView());
         RelativeLayout.LayoutParams takeParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -91,8 +102,10 @@ public class AttendanceFragment extends Fragment {
         takeParams.setMargins(0, dpToPx(8), dpToPx(10), 0);
         takeAttendanceButton.setLayoutParams(takeParams);
         classBoxLayout.addView(takeAttendanceButton);
+
         classContainer.addView(classBoxLayout);
     }
+
 
     private Button createButton(String text, int drawableId) {
         Button button = new Button(requireContext());
@@ -263,4 +276,37 @@ public class AttendanceFragment extends Fragment {
             addNewClass(className);
         }
     }
+
+    private void showCalendarDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+        final CalendarView calendarView = new CalendarView(requireContext());
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                String selectedDate = dayOfMonth + "/" + (month + 1) + "/" + year;
+                // Call your method to fetch attendance data for the selected date
+                fetchAttendanceDataForDate(selectedDate);
+            }
+        });
+
+        builder.setView(calendarView);
+        builder.setPositiveButton("OK", (dialog, which) -> dialog.dismiss());
+        builder.setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss());
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void fetchAttendanceDataForDate(String date) {
+        // Example of what this function might look like
+        // This could be an API call or a database query
+        Log.d(TAG, "Fetching data for date: " + date);
+        // Assume this function fetches data asynchronously and updates the UI accordingly
+        // For demonstration, just showing a Toast
+        Toast.makeText(getContext(), "Fetching data for: " + date, Toast.LENGTH_SHORT).show();
+
+        // If you have a model and a viewmodel, you might trigger a LiveData update here
+        // classViewModel.loadDataForDate(date);
+    }
+
+
 }
