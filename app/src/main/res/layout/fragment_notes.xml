@@ -48,7 +48,6 @@
         android:text="Check Notes"
         android:textColor="@color/white"
         android:textStyle="bold" />
-</FrameLayout>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
