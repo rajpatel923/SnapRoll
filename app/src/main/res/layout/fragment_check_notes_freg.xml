@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckNotesFreg"
+    android:background="@color/Teal"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:background="@color/blue"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical"
+        android:id="@+id/notesLinkLayout"
+        android:background="@color/white"
+        android:padding="15dp"
+        >
+        <TextView
+            android:id="@+id/userInfoTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User details will appear here"
+            android:textSize="25dp"
+            android:textColor="@color/blue"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:padding="10dp"
+            />
+    </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

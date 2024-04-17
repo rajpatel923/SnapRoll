@@ -2,6 +2,7 @@
 
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,11 +12,11 @@
     <!--Formatting of the background box on the notes fragment -->
     <TextView
         android:layout_width="355dp"
-        android:layout_height="100dp"
+        android:layout_height="184dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:background="@drawable/rounded_class_box" />
+        android:background="@drawable/rounded_class_box"
+        android:gravity="center" />
 
 
     <TextView
@@ -48,3 +49,14 @@
         android:textColor="@color/white"
         android:textStyle="bold" />
 </FrameLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="130dp"
+        android:text="Upload file"
+        android:textColor="@color/white"
+        android:id="@+id/uploadmp3FileButton"
+        />
+</FrameLayout>
+
